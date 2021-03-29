@@ -1,0 +1,18 @@
+<div class="user_list_container">
+  <div class="user_list">
+    <div *ngIf="users.length > 0">
+      <monorepo-test-users-list-row
+        *ngFor="let user of users"
+        [user]="user"
+        (edit)="editUser($event)"
+        (delete)="deleteUser($event)"
+      ></monorepo-test-users-list-row>
+    </div>
+    <div *ngIf="users.length === 0">
+      <h3>No users found</h3>
+    </div>
+  </div>
+  <div class="loading_container">
+    <button class="load_btn">Load more</button>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.user_list_row {
+  background: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background: blue;
+
+  .text_container {
+    .title {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .description {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+  }
+  .btn_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    button {
+      background: transparent;
+      border: none;
+      padding: 0;
+
+      cursor: pointer;
+      .svg_icon {
+        height: 22px;
+        width: 22px;
+      }
+    }
+  }
+}
