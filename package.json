@@ -26,7 +26,10 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config apps/api/ormconfig.ts", 
+    "migration:generate": "npm run typeorm migration:generate -- -n",
+    "migration:run": "npm run typeorm migration:run"
   },
   "private": true,
   "dependencies": {
