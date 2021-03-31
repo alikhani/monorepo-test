@@ -1,16 +1,20 @@
-import { CreateDateColumn, Entity, UpdateDateColumn, VersionColumn } from 'typeorm';
+import {
+  CreateDateColumn,
+  Entity,
+  UpdateDateColumn,
+  VersionColumn,
+} from 'typeorm';
 
-@Entity()
 export class EtdBaseEntity {
-    @CreateDateColumn({ type: 'timestamp' })
-    readonly createdAt?: Date;
+  @CreateDateColumn({ type: 'timestamp' })
+  readonly createdAt?: Date;
 
-    @UpdateDateColumn({ type: 'timestamp' })
-    readonly updatedAt?: Date;
+  @UpdateDateColumn({ type: 'timestamp' })
+  readonly updatedAt?: Date;
 
-    @VersionColumn({
-        select: false,
-        default: 1
-    })
-    readonly _version?: number;
+  @VersionColumn({
+    select: false,
+    default: 1,
+  })
+  readonly _version?: number;
 }

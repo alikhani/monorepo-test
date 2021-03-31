@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo-test/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@monorepo-test/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@monorepo-test/mocks": ["libs/mocks/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,3 +1,4 @@
+import { UserStatusEnum } from '@monorepo-test/api-interfaces';
 import {
   Column,
   Entity,
@@ -12,11 +13,6 @@ import {
 import { EtdBaseEntity } from '../../common/base.entity';
 import { UserRoleEntity } from './user-role.entity';
 
-export enum UserStatus {
-  ACTIVE = 'active',
-  INACTIVE = 'inactive',
-}
-
 @Entity({ name: 'User' })
 export class UserEntity extends EtdBaseEntity {
   @PrimaryGeneratedColumn('uuid')
@@ -28,14 +24,17 @@ export class UserEntity extends EtdBaseEntity {
   @Column({ type: 'timestamp', nullable: true })
   readonly lastSeenAt?: Date;
 
+  // @Column({ length: 255, nullable: false })
+  // name: string;
+
   // User status
   @Column({
     type: 'enum',
-    enum: UserStatus,
-    default: UserStatus.INACTIVE,
+    enum: UserStatusEnum,
+    default: UserStatusEnum.INACTIVE,
     nullable: false,
   })
-  value: UserStatus;
+  value: UserStatusEnum;
 
   // Role
   @ManyToOne(() => UserRoleEntity, (role) => role.users, { nullable: true })
